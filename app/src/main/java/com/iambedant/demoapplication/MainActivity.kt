@@ -8,14 +8,11 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    internal var mButton: Button? = null
+    val mButton: Button by bindView(R.id.btn_click)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        mButton = findViewById(R.id.btn_click) as Button?
-
         mButton!!.setOnClickListener { this.showMessage("Hello World") }
     }
 
